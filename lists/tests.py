@@ -44,16 +44,6 @@ class HomePageTest(TestCase):
 		#self.assertTrue(response.content.startswith(b'<html>'))
 		#self.assertIn(b'<title>To-Do lists</title>', response.content)
 		#self.assertTrue(response.content.strip().endswith(b'</html>'))	
-	def test_home_page_only_saves_items_when_necessay(self):
-		request = HttpRequest()
-		request.method = 'POST'
-		request.POST['item_text'] = 'A new list item'
-
-		response = home_page(request)
-
-		self.assertEqual(Item.objects.count(),1)
-		new_item = Item.objects.first()
-		self.assertEqual(new_item.text, 'A new list item')
 
 class ItemModelTest(TestCase):
 	def test_saving_and_retrieving_items(self):
