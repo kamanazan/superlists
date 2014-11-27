@@ -61,11 +61,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'djprojdb',
-	'USER':'postgresql',
-	'PASSWORD':'nimda',
-	'HOST':'localhost',
-	'PORT':'5432'
-	
+        'USER':'postgresql',
+        'PASSWORD':'nimda',
+        'HOST':'localhost',
+        'PORT':'5432'
+
     }
 }
 
