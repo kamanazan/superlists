@@ -2,7 +2,6 @@ import sys
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 class FunctionalTest(StaticLiveServerTestCase):
-    #hack did not seem to work though
     @classmethod
     def setUpClass(cls):
         for arg in sys.argv:
@@ -10,6 +9,7 @@ class FunctionalTest(StaticLiveServerTestCase):
                 cls.server_url = 'http://' + arg.split('=')[1]
 
                 return
+        # NOTE: in python 3 we wrote super().setUpClass() instead
         super(StaticLiveServerTestCase,cls).setUpClass()
         cls.server_url = cls.live_server_url
 
